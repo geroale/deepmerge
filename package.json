@@ -39,5 +39,7 @@
     "uglify-js": "^3.6.0"
   },
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "immutable": "^4.0.0-rc.12"
+  }
 }

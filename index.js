@@ -1,10 +1,13 @@
-var defaultIsMergeableObject = require('is-mergeable-object')
+import defaultIsMergeableObject from 'is-mergeable-object';
+import { isImmutable } from 'immutable';
 
 function emptyTarget(val) {
 	return Array.isArray(val) ? [] : {}
 }
 
 function cloneUnlessOtherwiseSpecified(value, options) {
+	if(isImmutable(value))
+	  return value;
 	return (options.clone !== false && options.isMergeableObject(value))
 		? deepmerge(emptyTarget(value), value, options)
 		: value
