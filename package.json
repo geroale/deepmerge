@@ -1,5 +1,5 @@
 {
-  "name": "deepmerge",
+  "name": "deepmerge-immutable-ignore",
   "description": "A library for deep (recursive) merging of Javascript objects",
   "keywords": [
     "merge",
@@ -10,10 +10,10 @@
     "recursive"
   ],
   "version": "4.0.0",
-  "homepage": "https://github.com/TehShrike/deepmerge",
+  "homepage": "https://github.com/geroale/deepmerge",
   "repository": {
     "type": "git",
-    "url": "git://github.com/TehShrike/deepmerge.git"
+    "url": "git://github.com/geroale/deepmerge.git"
   },
   "main": "dist/cjs.js",
   "engines": {

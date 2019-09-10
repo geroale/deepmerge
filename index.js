@@ -41,18 +41,29 @@ function getKeys(target) {
 
 function mergeObject(target, source, options) {
 	var destination = {}
-	if (options.isMergeableObject(target)) {
-		getKeys(target).forEach(function(key) {
-			destination[key] = cloneUnlessOtherwiseSpecified(target[key], options)
-		})
-	}
-	getKeys(source).forEach(function(key) {
-		if (!options.isMergeableObject(source[key]) || !target[key]) {
-			destination[key] = cloneUnlessOtherwiseSpecified(source[key], options)
-		} else {
-			destination[key] = getMergeFunction(key, options)(target[key], source[key], options)
-		}
-	})
+
+  if(isImmutable(target)) {
+    return target.mergeDeep(source);
+  }
+  else if (options.isMergeableObject(target)) {
+    getKeys(target).forEach(function(key) {
+      destination[key] = cloneUnlessOtherwiseSpecified(target[key], options)
+    })
+  }
+
+  if(isImmutable(source)) {
+    return source.mergeDeep(destination);
+  }
+  else {
+    getKeys(source).forEach(function(key) {
+  		if (!options.isMergeableObject(source[key]) || !target[key]) {
+  			destination[key] = cloneUnlessOtherwiseSpecified(source[key], options)
+  		} else {
+  			destination[key] = getMergeFunction(key, options)(target[key], source[key], options)
+  		}
+  	})
+  }
+
 	return destination
 }
 
