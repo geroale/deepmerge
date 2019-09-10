@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git://github.com/geroale/deepmerge.git"
   },
-  "main": "dist/cjs.js",
+  "main": "index.js",
   "engines": {
     "node": ">=0.10.0"
   },
@@ -27,7 +27,6 @@
   },
   "devDependencies": {
     "@types/node": "^8.10.49",
-    "is-mergeable-object": "1.1.0",
     "is-plain-object": "^2.0.4",
     "jsmd": "^1.0.1",
     "rollup": "^1.15.5",
@@ -40,6 +39,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "immutable": "^4.0.0-rc.12"
+    "immutable": "^4.0.0-rc.12",
+    "is-mergeable-object": "1.1.0",
   }
 }
