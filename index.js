@@ -1,5 +1,5 @@
-import defaultIsMergeableObject from 'is-mergeable-object';
-import { isImmutable } from 'immutable';
+const defaultIsMergeableObject = require('is-mergeable-object');
+const { isImmutable } = require('immutable');
 
 function emptyTarget(val) {
 	return Array.isArray(val) ? [] : {}
